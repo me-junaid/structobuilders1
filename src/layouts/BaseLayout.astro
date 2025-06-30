@@ -1,27 +1,57 @@
 ---
+import Header from "../components/Header.astro";
+import "../assets/styles/global.css"
+
 const { title, description } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title}</title>
-  <meta name="description" content={description} />
-  <link rel="stylesheet" href="../styles/global.css">
-</head>
-<body>
-  <header style="background:#1e2329; color:white; padding:1rem; text-align:center;">
-    <h1>Structo Builders</h1>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
 
-  <main style="padding:2rem;">
-    <slot /> <!-- Your page content goes here -->
-  </main>
+    <meta
+      property="og:title"
+      content="Structo Builders - Quality + Structured Construction"
+    />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-  <footer style="background:#1e2329; color:white; text-align:center; padding:1rem;">
-    <p>© {new Date().getFullYear()} Structo Builders. All rights reserved.</p>
-  </footer>
-</body>
+    <link rel="canonical" href="https://structobuilders.com/" />
+
+    <!-- eslint-disable-next-line -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Structo Builders",
+        "url": "https://structobuilders.com",
+        "logo": "https://structobuilders.com/logo.png",
+        "sameAs": ["https://www.facebook.com/structobuilders"]
+      }
+    </script>
+  </head>
+  <body>
+    <Header />
+
+    <main style="padding:2rem;">
+      <slot />
+      <!-- Your page content goes here -->
+    </main>
+
+    <footer
+      style="background:#1e2329; color:white; text-align:center; padding:1rem;"
+    >
+      <p>
+        © {new Date().getFullYear()} Structo Builders. All rights reserved.
+      </p>
+    </footer>
+
+    
+  </body>
 </html>
