@@ -1,0 +1,37 @@
+---
+const title = "Structo Builders best builders of bangalore";
+const tagline = "Structured Quality. Timely Delivery. Trusted by Families.";
+const ctaText = "Get a Free Estimate";
+const ctaLink = "/contact";
+---
+
+<section class=" py-12 md:py-20">
+  <div class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-10">
+    <!-- Text Content -->
+    <div class="w-full md:w-1/2 text-center md:text-left">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+        {title}
+      </h1>
+      <p class="mt-4 text-gray-600 text-base md:text-lg">
+        {tagline}
+      </p>
+      <a 
+        href={ctaLink}
+        class="mt-6 inline-block bg-orange-600 hover:bg-orange-700 text-white font-medium px-6 py-3 rounded transition duration-300"
+      >
+        {ctaText}
+      </a>
+    </div>
+
+    <!-- Image -->
+    <div class="w-full md:w-1/2">
+      <img 
+        src="/heroimage.jpg" 
+        alt="Construction site with workers and equipment" 
+        class="w-full h-auto rounded shadow"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  </div>
+</section>
